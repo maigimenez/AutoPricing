@@ -1,0 +1,117 @@
+\documentclass[spanish,a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% Parámetro para poder usar colores
+\usepackage[pdftex,usenames,dvipsnames]{color}
+
+%Paquete para justificar el texto
+\usepackage{ragged2e} 
+
+% Añado anchura al texto y elimino el margen horizontal
+\addtolength{\textwidth}{45mm}
+\addtolength{\textheight}{15mm}
+\addtolength{\oddsidemargin}{-20mm}
+\addtolength{\evensidemargin}{-20mm}
+\addtolength{\parskip}{1,5mm}
+
+
+% Penalizo la finalización o el inicio de la página con 
+% lineas huerfanas
+\clubpenalty=10000
+\widowpenalty=10000
+
+% Incluyo el paquete para gráficos
+\usepackage{graphicx}
+% Con esta opción no cargo las imágenes sólo sus espacios
+%\usepackage[draft]{graphicx}
+%\usepackage{wrapfig} %Las imágenes quedan rodeadas de texto
+
+% Incluyo el paquete para hiperreferncias
+%\usepackage{hyperref} 
+
+%Con esto incluyo secciones en la tabla de contenidos
+\setcounter{tocdepth}{3}
+
+
+%opening
+\title{Sistema de tarifación automática para redes vehiculares basado en smartphones Android y Google Maps }
+\author{Maria Teresa Giménez Fayos}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Proposición técnica}
+  
+\section{Análisis del sistema}
+  \subsection{Aplicación cliente}
+  Desarrollaremos una aplicación Android
+  \subsection{Aplicación servidor}
+
+\section{Requisitos}
+A continuación se detallan los requisitos que el sistema implementará. Las funcionalidades se dividen segun el rol del usuario al que van diriguidos. 
+
+\subsection{Rol cliente}
+
+El cliente deberá poder tener acceso a las siguientes funcionalidades cuando se conecte a la aplicación servidor:
+\begin{itemize}
+ \item El cliente deberá ser capaz de identificarse en el sistema.
+ \item Una vez autentificadado, será capaz de modificar sus datos personales.
+ \item El cliente podrá ver las facturas que se han generado.
+\end{itemize}
+
+Mientras que cuando este accediendo al cliente de la aplicación deberá poder llevar a cabo las siguientes tareas:
+\begin{itemize}
+ \item Identificarse en el sistema.
+ \item Seleccionar el vehículo que realizará las pruebas si tiene más de uno asociado a este cliente. 
+ \item Seleccionar el dispositivo android que realizará las pruebas.
+ \item Iniciar las pruebas. Cuando se inicien las pruebas el cliente podrá seleccionar si desea que se envíen los datos en tiempo real o 
+si decdide almacenarlos en el dispositivo para después enviarlos.
+ \item Finalizar las pruebas con el vehículo. Si no decidió enviar los datos en tiempo real ahora se enviarán todos, así como si quedaran 
+datos pendientes de enviar porque en algún momento se hubiera perdido la conexión. 
+  \item Consultar el gasto generado durante la prueba que se esta realizando. 
+  \item Consultar un historial de las pruebas realizadas para el cliente que se ha identificado.
+\end{itemize}
+
+\subsection{Rol administrador}
+
+El administrador podrá llevar a cabo las siguientes tareas en la aplicación servidor
+\begin{itemize}
+ \item Identificarse, de igual modo como lo hace el cliente, aunque por supuesto con un rol diferente. 
+ \item Consultar, modificar, crear y eliminar datos de clientes. 
+ \item Consultar, modificar, crear y eliminar datos de los vehículos. 
+ \item Consultar, modificar, crear y eliminar pistas de pruebas. Seleccionando el área del mapa que corresponde a la pista de prueba, el administrador creará nuevas pistas de pruebas. 
+Cuando se cree una pista nueva, el administrador asociará una tarifa existente a la nueva pista o creará una nueva tarifa. 
+ \item Consultar y modificar tarifas asociadas a las pistas de pruebas.
+ \item Consultar, modificar, crear y eliminar dispositivos android para realizar las pruebas. 
+ \item Vincular y desvincular un dispositivo android con un vehículo.
+ \item Consultar el historial de las pruebas realizadas. 
+ \item Consultar el hisotorial de facturas.
+ \item Generar facturas, agrupando pruebas realizadas. 
+\end{itemize}
+
+La funcionalidades que puede realizar el administrador en la aplicación cliente, serán las mismas que puede realizar el cliente incluyendo la posibilidad de vincular un terminal con un cliente para realizar 
+las pruebas. 
+
+
+
+
+\section{Diseño}
+\subsection{Aplicación cliente}
+\subsection{Aplicación servidor}
+
+\section{Implementación}
+\subsection{Aplicación cliente}
+\subsection{Aplicación servidor}
+
+\section{Pruebas}
+\subsection{Aplicación cliente}
+\subsection{Aplicación servidor}
+
+
+\end{document}
