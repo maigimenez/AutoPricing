@@ -1,0 +1,7 @@
+body{
+    background-color:red;
+}
+#divMapa { 
+    width: 100%; height: 515px; 
+    border: solid 2px #808080; 
+}
