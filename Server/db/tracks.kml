@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <ScribbleMaps v="3.0" id="IJu9l_NgdF" lat="39.48377633996352" yaw="0" pitch="0" lng="-0.6451683628133797" zoom="17" type="Mapnik" maxZoom="0" ></ScribbleMaps>
+<name><![CDATA[]]></name>
+<description><![CDATA[]]></description>
+<atom:author><atom:name>Scribble Maps</atom:name></atom:author>
+<atom:link href="http://www.scribblemaps.com/maps/view/IJu9l_NgdF" />
+
+<Style id="style_0">
+  <LineStyle>
+    <color>7fff6666</color>
+    <blendMode>normal</blendMode>
+    <width>2</width>
+   </LineStyle>
+   <PolyStyle>
+     <color>7fff6666</color>
+     <colorMode>normal</colorMode>
+     <blendMode>normal</blendMode>
+     <fill>1</fill>
+   </PolyStyle>
+</Style>
+
+
+<Placemark scribbleType="2">
+  <name><![CDATA[Rectangle]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.6428723918966917,39.48447190400285,0 -0.6428723918966917,39.48447190400285,0 -0.6428723918966917,39.48447190400285,0 -0.6428723918966917,39.48447190400285,0</coordinates>
+	</LinearRing>
+	</outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+
+<Placemark scribbleType="4">
+  <name>
+    <![CDATA[Polygon]]></name>
+    <styleUrl>#style_0</styleUrl>
+    <Polygon>
+      <altitudeMode>clampToGround</altitudeMode>
+      <outerBoundaryIs>
+	<LinearRing>
+	  <coordinates>-0.6422286617330575,39.485374470778545,0 -0.6415527450613245,39.485084657035614,0 -0.6421964752248988,39.48417380598062,0 -0.6428723918966717,39.484463623519424,0 -0.6428723918966717,39.484463623519424,0 -0.6428723918966717,39.484463623519424,0 -0.6425505268148446,39.48491904864024,0</coordinates>
+	</LinearRing>
+      </outerBoundaryIs>
+   </Polygon>
+</Placemark>
+
+
+<Placemark scribbleType="4">
+  <name><![CDATA[Polygon]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.6456940757803187,39.48593753402625,0 -0.645436583714889,39.48602861735854,0 -0.645211278157638,39.486061738540684,0 -0.6449645149282679,39.48602033706053,0 -0.6445568191579842,39.4858547308934,0 -0.6444066154531902,39.484786561640135,0 -0.6444709884695277,39.484571269726274,0 -0.6446426498464808,39.48439737961706,0 -0.6451469051412606,39.48427317213,0 -0.6456726181081796,39.48440566010832,0 -0.6458442794851726,39.484654074387336,0 -0.6459944831899667,39.485573199504195,0 -0.6458228218130335,39.48583817025501,0 -0.6457584487966761,39.485896132472156,0</coordinates>
+     </LinearRing>
+   </outerBoundaryIs>
+ </Polygon>
+</Placemark>
+
+
+<Placemark scribbleType="2">
+  <name><![CDATA[Rectangle]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.645812092976974,39.48403303702599,0 -0.645812092976974,39.48403303702599,0 -0.645812092976974,39.48403303702599,0 -0.645812092976974,39.48403303702599,0</coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+
+<Placemark scribbleType="4">
+  <name><![CDATA[Polygon]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.6440150129369959,39.485279246396374,0 -0.6433015453390345,39.485337209079404,0 -0.6432479011587366,39.48498115183486,0 -0.6439667331747279,39.48493146928371,0 -0.6439720975927776,39.48499771267737,0</coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+<Placemark scribbleType="4">
+  <name><![CDATA[Polygon]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.6458067285589442,39.48404131756074,0 -0.6454312192968592,39.48407029942418,0 -0.6453775751165614,39.483821883059896,0 -0.6457691776327357,39.48380532193739,0 -0.6457691776327357,39.48380532193739,0 -0.6457691776327357,39.48380532193739,0 -0.645785270886845,39.48390882888832,0</coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+
+<Placemark scribbleType="4">
+  <name><![CDATA[Polygon]]></name>
+  <styleUrl>#style_0</styleUrl>
+  <Polygon>
+    <altitudeMode>clampToGround</altitudeMode>
+    <outerBoundaryIs>
+      <LinearRing>
+	<coordinates>-0.644637285428451,39.484107561802304,0 -0.644261776166366,39.484140683899426,0 -0.6442188608221278,39.48391710943775,0 -0.6446158277563518,39.48388812751046,0 -0.6446158277563518,39.48388812751046,0</coordinates>
+      </LinearRing>
+    </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+</Document>
+</kml>
