@@ -5,5 +5,6 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('tracks.views',
-                       url(r'^$','index'),
+                       (r'^$', 'index'),    
+                       (r'^(?P<track_id>\d+)/$', 'tStats'),
 )

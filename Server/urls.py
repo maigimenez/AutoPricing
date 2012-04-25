@@ -8,7 +8,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
                        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
                        #Tracks
-                       (r'^', include('tracks.urls')),    
+                       (r'^tracks/$', 'tracks.views.index'),    
+                       (r'^tracks/(?P<track_id>\d+)/$', 'tracks.views.tStats'),    
+                       #(r'^tracks/$', include('tracks.urls')),    
                        
     # Examples:
     # url(r'^$', 'Server.views.home', name='home'),
