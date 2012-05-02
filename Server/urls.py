@@ -11,13 +11,11 @@ urlpatterns = patterns('',
                        (r'^tracks/$', 'tracks.views.index'),    
                        (r'^tracks/(?P<track_id>\d+)/$', 'tracks.views.tStats'),    
                        #(r'^tracks/$', include('tracks.urls')),    
-                       
-    # Examples:
-    # url(r'^$', 'Server.views.home', name='home'),
-    # url(r'^Server/', include('Server.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+                       #Testing
+                       (r'^tests/$', 'testing.views.index'),    
+                       (r'^tests/track/(?P<track_id>\d+)/$', 'testing.views.tStats'),                        
                        
                        #Admin
                        url(r'^admin/', include(admin.site.urls)),
