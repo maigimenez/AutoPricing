@@ -6,5 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('tracks.views',
                        (r'^$', 'index'),    
-                       (r'^(?P<track_id>\d+)/$', 'tStats'),
+                       #(r'^(?P<track_id>\d+)/$', 'tStats'),
+                       (r'^/(?P<track_id>\d+)/$', 'tStats'),
 )

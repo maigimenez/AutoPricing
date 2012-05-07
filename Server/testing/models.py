@@ -18,7 +18,7 @@ class Mobile(models.Model):
     def __unicode__(self):
         return u"Mobile name: %s" % self.name
 
-class Vehicle(models.Model):
+class Car(models.Model):
     name = models.CharField(max_length=50)
     color = models.CharField(max_length=50)
     frame = models.IntegerField()
@@ -28,4 +28,4 @@ class Vehicle(models.Model):
 
 class Test(models.Model):
     mobile = models.ForeignKey(Mobile)
-    vehicle = models.ForeignKey(Vehicle)
+    car = models.ForeignKey(Car)

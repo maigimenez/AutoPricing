@@ -1,0 +1,49 @@
+<! DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Tracks{% endblock %}</title>
+    <link rel="stylesheet" href="/media/css/style.css">
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.js"></script>
+    <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+  </head>
+
+  <body>
+    <div id="basicMap"></div>
+    {% for t in tracks %}
+    <p> {{t.name}} </p>
+    {% endfor %}
+
+ <script>
+     map = new OpenLayers.Map("basicMap");
+     map.addLayer(new OpenLayers.Layer.OSM());
+
+     var lonLat = new OpenLayers.LonLat( -0.627851 ,39.485826)
+     .transform(
+     new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+     map.getProjectionObject() // to Spherical Mercator Projection
+     );
+ 
+     var zoom=12;
+
+     //var markerLayer = new OpenLayers.Layer.Markers( "Markers" );
+     //map.addLayer(markerLayer);
+     
+     var vectorLayer = new OpenLayers.Layer.Vector("Tracks");
+     map.addLayer(vectorLayer);
+      
+     var track = 'POLYGON ((-0.6324330000000000 39.4854210000000023, -0.6326690000000000 39.4843770000000021, -0.6315960000000000 39.4843279999999979, -0.6294290000000000 39.4870769999999993, -0.6297720000000000 39.4875070000000008, -0.6301369999999999 39.4875570000000025, -0.6305440000000000 39.4875570000000025, -0.6308450000000000 39.4874579999999966, -0.6313170000000000 39.4871589999999983, -0.6317680000000000 39.4865959999999987, -0.6317460000000000 39.4862979999999979, -0.6320460000000000 39.4857849999999999, -0.6322610000000000 39.4855700000000027, -0.6324330000000000 39.4854210000000023))'
+     
+//     feature = OpenLayers.Feature.Vector(OpenLayer)
+    		       
+//     var point = OpenLayers.Geometry.fromWKT(track)    
+// vectorLayer.addFeatures(track);
+
+     //markerLayer.addMarker(new OpenLayers.Marker(lonLat));
+     vectorLayer.addFeatures([new OpenLayers.Marker(lonLat)]);
+     map.setCenter (lonLat, zoom);
+     //vectorLayer.addFeatures([lonLat]);
+
+   </script>
+  </body>
+</html>
