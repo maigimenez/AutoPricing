@@ -62,10 +62,10 @@
 
       var lonLat = new OpenLayers.LonLat(lon, lat).transform(proj, map.getProjectionObject());
 
-      Tracks.style = style_green;
+//    Tracks.style = style_green;
 
       var bounds = tr[0].geometry.getBounds();
-      for (i=1;i<"{{len(tracks)}}";i++){
+      for (i=1;i<tr.length;i++){
 		   bounds.extend(tr[i].geometry.getBounds());
 		   }
 		   map.zoomToExtent(bounds);

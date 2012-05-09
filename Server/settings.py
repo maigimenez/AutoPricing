@@ -123,7 +123,6 @@ INSTALLED_APPS = (
     #GeoDjango
     'django.contrib.gis',
     #User applications
-    'tracks',
     'testing',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
