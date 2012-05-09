@@ -14,8 +14,11 @@ urlpatterns = patterns('',
 
                        #Testing
                        (r'^tests/$', 'testing.views.index'),    
-                       (r'^tests/track/(?P<track_id>\d+)/$', 'testing.views.tStats'),                        
+                       (r'^tests/track/(?P<track_id>\d+)/$', 'testing.views.tStats'),
                        
+                       #Api
+                       (r'^api/',include('Server.api.urls'),
+
                        #Admin
                        url(r'^admin/', include(admin.site.urls)),
 )
