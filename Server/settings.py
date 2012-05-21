@@ -107,6 +107,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'Server.urls'
 
 TEMPLATE_DIRS = (
+    '/home/mai/Dev/AutoPricing/Server/templates',
     os.path.join(ROOT_PATH,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -124,11 +125,11 @@ INSTALLED_APPS = (
     'django.contrib.gis',
     #User applications
     'testing',
-    'api',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'djangorestframework',
 )
 
 # A sample logging configuration. The only tangible logging

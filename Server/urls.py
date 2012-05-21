@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
+
 urlpatterns = patterns('',
                        (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT }),
                        #Tracks
@@ -17,8 +18,11 @@ urlpatterns = patterns('',
                        (r'^tests/track/(?P<track_id>\d+)/$', 'testing.views.tStats'),
                        
                        #Api
-                       #(r'^api/',include('Server.api.urls')),
-
+                       (r'^api/tracks/$', 'testing.views.jtracks'),
+                       (r'^api/tests/$', 'testing.views.jtests'),
+                       (r'^api/mobiles/$', 'testing.views.jmobiles'),
+                       
                        #Admin
                        url(r'^admin/', include(admin.site.urls)),
 )
+
