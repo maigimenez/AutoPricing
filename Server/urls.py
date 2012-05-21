@@ -14,13 +14,17 @@ urlpatterns = patterns('',
                        #(r'^tracks/$', include('tracks.urls')),    
 
                        #Testing
-                       (r'^tests/$', 'testing.views.index'),    
-                       (r'^tests/track/(?P<track_id>\d+)/$', 'testing.views.tStats'),
+                       (r'^tracks/$', 'testing.views.tracks'),    
+                       (r'^track/(?P<track_id>\d+)/$', 'testing.views.tStats'),
                        
                        #Api
                        (r'^api/tracks/$', 'testing.views.jtracks'),
                        (r'^api/tests/$', 'testing.views.jtests'),
                        (r'^api/mobiles/$', 'testing.views.jmobiles'),
+                       (r'^api/vehicles/$', 'testing.views.jvehicles'),
+                       (r'^api/clients/$', 'testing.views.jclients'),
+                       (r'^api/invoices/$', 'testing.views.jinvoices'),
+                       
                        
                        #Admin
                        url(r'^admin/', include(admin.site.urls)),

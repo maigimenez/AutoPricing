@@ -1,14 +1,14 @@
 from django.template import Context, loader
 from django.http import HttpResponse
-from testing.models import Track,Mobile,Test
+from testing.models import Track,Mobile,Test,Vehicle,Client,Invoice
 from django.conf.urls.defaults import *
 from django.shortcuts import render_to_response
 from django.core import serializers
 
 
-def index(request):
+def tracks(request):
     tracks = Track.objects.all()
-    t = loader.get_template('index.html')
+    t = loader.get_template('tracks.html')
     c = Context({'tracks': tracks})
     return HttpResponse(t.render(c))
 
@@ -31,5 +31,20 @@ def jtests(request, **kwargs):
 
 def jmobiles(request, **kwargs):
     items = Mobile.objects.all()
+    items = serializers.serialize('json', items, indent=4)
+    return HttpResponse(items, mimetype='application/json')
+
+def jvehicles(request, **kwargs):
+    items = Vehicle.objects.all()
+    items = serializers.serialize('json', items, indent=4)
+    return HttpResponse(items, mimetype='application/json')
+
+def jclients(request, **kwargs):
+    items = Client.objects.all()
+    items = serializers.serialize('json', items, indent=4)
+    return HttpResponse(items, mimetype='application/json')
+
+def jinvoices(request, **kwargs):
+    items = Invoice.objects.all()
     items = serializers.serialize('json', items, indent=4)
     return HttpResponse(items, mimetype='application/json')

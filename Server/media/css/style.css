@@ -1,8 +1,62 @@
 body{
     background-color:F5f5f5;
+    font-family: Helvetica;
 }
+
+#wraper{
+    width: 750px;
+    margin: 0 auto;
+    padding: 0px;
+    border:0;
+}
+
 #basicMap { 
+    float: left;
     width: 50%; 
     height: 500px; 
     border: solid 2px #00f0f; 
+}
+
+#infoMap{
+    padding-left: 2em;
+    margin:0;
+    float:left;
+    width: 45%;
+    height: auto;
+    
+}
+#centerMap{
+    margin: 0 auto;
+    width:500px;
+    height: 400px;
+}
+
+
+#header{
+    width:100%;
+    height: auto;
+    margin-bottom: 1em;
+    background-color:#304860;
+    color:white;
+}
+
+#header h1{
+    padding:1em 1em;
+    text-align:center;
+}
+
+h2{
+    color:#304860;
+}
+
+#footer{
+    clear:both;
+    width:100%;
+    height:auto;
+    background-color:#304860;
+    color:white;
+}
+
+#footer p{
+    text-align:center;
 }

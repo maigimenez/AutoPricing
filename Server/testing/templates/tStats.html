@@ -18,7 +18,7 @@
    var zoom = 4;
 
    function inicializa() {
-   map = new OpenLayers.Map("basicMap", {
+   map = new OpenLayers.Map("centerMap", {
    controls: [
    new OpenLayers.Control.Navigation(),
    new OpenLayers.Control.PanZoomBar(),
@@ -72,9 +72,18 @@
   </head>
 
   <body onload="inicializa()">
-    <div id="basicMap"></div>
+    <div id="wrapper">
+      <div id="header"> <h1>Autopricing</h1> </div>
 
-    <p> Nombre de la pista: {{track.name}} </p>
+      <div id="container">
+	<h2> Track: {{track.name}} </h2>
+
+	<div id="centerMap"></div>
+
+      <div id="footer"> 
+	<p> (GRC) Autopricing </p> 
+      </div>
+    </div>
 
   </body>
 </html>
