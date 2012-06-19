@@ -70,7 +70,7 @@ public class Webservice {
 			try{
 		        	jArray = new JSONObject(result);
 			}catch(JSONException e){
-				Log.e("log_tag", "Error parsing data "+e.toString());
+				Log.e("log_tag", "Error parsing data "+ e.toString());
 			}
 
 			return jArray;
@@ -79,12 +79,12 @@ public class Webservice {
 
 
 	
-	protected static void callWebService(){
+	protected static void callWebService(String url){
 		Log.i("WS", "Init web service");
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 	
 		//Get the data (see above)
-		JSONObject json = getJSON("http://www.colorines.org/tracks.json");
+		JSONObject json = getJSON(url);
 			
 		try{
 			//Get the element that holds the tracks ( JSONArray )
