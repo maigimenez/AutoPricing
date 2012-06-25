@@ -6,6 +6,7 @@ from django.shortcuts import render_to_response
 from django.core import serializers
 
 
+
 def tracks(request):
     tracks = Track.objects.all()
     t = loader.get_template('tracks.html')
@@ -18,31 +19,45 @@ def tStats(request, track_id):
     except Track.DoesNotExist:
         raise Http404
     return render_to_response('tStats.html', {'track': t})
-    
+
+"""
+API: Serialize Tracks in JSON 
+"""    
 def jtracks(request, **kwargs):
     items = "{\"tracks\": " + serializers.serialize('json', Track.objects.all(), indent=4) + "}"
     return HttpResponse(items, mimetype='application/json')
 
+"""
+API: Serialize Tests in JSON 
+"""
 def jtests(request, **kwargs):
-    items = Test.objects.all()
-    items = "{\"tests\": " + serializers.serialize('json', items, indent=4) + "}"
+    items = "{\"tests\": " + serializers.serialize('json', Test.objects.all() , indent=4) + "}"
     return HttpResponse(items, mimetype='application/json')
 
+"""
+API: Serialize Mobiles in JSON 
+"""
 def jmobiles(request, **kwargs):
-    items = Mobile.objects.all()
-    items = "{\"mobiles\": " + serializers.serialize('json', items, indent=4) + "}"
+    items = "{\"mobiles\": " + serializers.serialize('json', Mobile.objects.all(), indent=4) + "}"
     return HttpResponse(items, mimetype='application/json')
 
-def jvehicles(request, **kwargs):
-    items = Vehicle.objects.all()
-    items = "{\"vehicles\": "+serializers.serialize('json', items, indent=4) + "}" 
+"""
+API: Serialize Vehicles in JSON 
+"""
+def jvehicles(request, **kwargs): 
+    items = "{\"vehicles\": "+serializers.serialize('json', Vehicle.objects.all(), indent=4) + "}" 
     return HttpResponse(items, mimetype='application/json')
 
+"""
+API: Serialize Clients in JSON 
+"""
 def jclients(request, **kwargs):
-    items = Client.objects.all()
-    items = "{\"clients\": " + serializers.serialize('json', items, indent=4) + "}"
+    items = "{\"clients\": " + serializers.serialize('json', Client.objects.all(), indent=4) + "}"
     return HttpResponse(items, mimetype='application/json')
 
+"""
+API: Serialize Invoices in JSON 
+"""
 def jinvoices(request, **kwargs):
     items = Invoice.objects.all()
     items = "{\"invoices\": " + serializers.serialize('json', items, indent=4) + "}"
