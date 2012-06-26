@@ -77,9 +77,8 @@ public class Webservice {
 		}
 	
 
-
 	
-	protected static void callWebService(String url){
+	protected static void loadTracks(String url){
 		Log.i("WS", "Init web service");
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 	

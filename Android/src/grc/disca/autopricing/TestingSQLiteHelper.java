@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class TestingSQLiteHelper extends SQLiteOpenHelper {
 	
@@ -43,13 +44,17 @@ public class TestingSQLiteHelper extends SQLiteOpenHelper {
 	
 	 public TestingSQLiteHelper(Context contexto, String nombre, CursorFactory factory, int version) {
 		 super(contexto, nombre, factory, version);
+		 
 	}
 
 	public void onCreate(SQLiteDatabase db) {
 		createDB(db);
 	}
 
-	public void onUpgrade(SQLiteDatabase db, int oldversion, int newversion) {
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		Log.w(TestingSQLiteHelper.class.getName(),
+				"Upgrading database from version " + oldVersion + " to " + newVersion + 
+				", which will destroy all old data");
 		dropDB(db);
 		createDB(db);
 	}
