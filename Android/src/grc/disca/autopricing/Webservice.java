@@ -1,5 +1,7 @@
 package grc.disca.autopricing;
 
+import grc.disca.autopricing.model.Track;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -32,6 +34,13 @@ public class Webservice {
 	HttpPut put = null;
 	HttpDelete delete = null;
 	String webserviceURL;
+	 
+	// JSON Node names
+	private static final String TAG_TRACKS_FIELDS = "fields";
+	private static final String TAG_TRACKS_NAME = "name";
+	private static final String TAG_TRACKS_AREA = "area";
+	private static final String TAG_TRACKS_PRICE = "price";
+
 	
 	public static JSONObject getJSON(String url){
 
@@ -78,7 +87,7 @@ public class Webservice {
 	
 
 	
-	protected static void loadTracks(String url){
+	protected static void loadTracks(String url,ArrayList<Track> tracks){
 		Log.i("WS", "Init web service");
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 	
@@ -87,18 +96,20 @@ public class Webservice {
 			
 		try{
 			//Get the element that holds the tracks ( JSONArray )
-			JSONArray  earthquakes = json.getJSONArray("tracks");
+			JSONArray  tracksArray = json.getJSONArray("tracks");
 	
 		      	//Loop the Array
-		        for(int i=0;i < earthquakes.length();i++){						
+		        for(int i=0;i < tracksArray.length();i++){	
+		        	Track t = new Track();
 	
 		        	HashMap<String, String> map = new HashMap<String, String>();
-		        	JSONObject e = earthquakes.getJSONObject(i);
-	
-		        	map.put("id",  String.valueOf(i));
-		        	map.put("name", "Earthquake name:" + e.getString("eqid"));
-		        	map.put("magnitude", "Magnitude: " +  e.getString("magnitude"));
-		        	mylist.add(map);
+		        	JSONObject trackObject = tracksArray.getJSONObject(i);
+		        	JSONObject trackField = trackObject.getJSONObject(TAG_TRACKS_FIELDS);
+		        	t.setName(trackField.getString(TAG_TRACKS_NAME));
+		        	t.setPrice(Float.valueOf(trackField.getString(TAG_TRACKS_PRICE)));
+		        	
+		        	tracks.add(t);
+		        	
 			}
 		       }catch(JSONException e)        {
 		       	 Log.e("log_tag", "Error parsing data "+e.toString());
@@ -106,61 +117,4 @@ public class Webservice {
 	}
 }
 
-	/*
-	 * 
-	 * 
-	 * 		HttpParams myParams = new BasicHttpParams();
-		HttpConnectionParams.setConnectionTimeout(myParams, 10000);
-		HttpConnectionParams.setSoTimeout(myParams, 10000);
-		httpClient = new DefaultHttpClient(myParams);
-		localContext = new BasicHttpContext();
-		webserviceURL = serviceName;
-
-	}
 	
-	//Use this method to do a HttpPost\WebInvoke on a Web Service
-	public String webInvoke(String methodName, Map<String, Object> params) {
-		JSONObject jsonObject = new JSONObject();
-		for (Map.Entry<String, Object> param : params.entrySet()){
-			try {
-				jsonObject.put(param.getKey(), param.getValue());
-			}
-			catch (JSONException e) {
-				Log.e("WEBSERVICE", "JSONException : "+e);
-			}
-		}
-		return webInvoke(methodName, jsonObject.toString(), "application/json");
-	}
-	
-	//POST
-	private String webInvoke(String methodName, String data, String contentType) {
-		ret = null;
-		httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY,
-		CookiePolicy.RFC_2109);
-		httpPost = new HttpPost(webServiceUrl + methodName);
-		response = null;
-		StringEntity tmp = null;
-		//httpPost.setHeader("User-Agent", "SET YOUR USER AGENT STRING HERE");
-	
-		if (contentType != null) {
-			httpPost.setHeader("Content-Type", contentType);
-			} 
-		else {
-			httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-		}
-		
-		try {
-			tmp = new StringEntity(data,"UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			Log.e("Groshie", "HttpUtils : UnsupportedEncodingException : "+e);
-		}
-		
-		httpPost.setEntity(tmp);
-		Log.d("Groshie", webServiceUrl + "?" + data);
-		try {
-		response = httpClient.execute(httpPost,localContext);
-		if (response != null) {
-		ret = EntityUtils.toString(response.getEntity());
-		}
-		} catch (Exception e) {
-	 * */

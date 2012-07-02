@@ -1,5 +1,8 @@
 package grc.disca.autopricing;
 
+import java.util.ArrayList;
+
+import grc.disca.autopricing.model.*;
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,14 +15,31 @@ public class AutopricingActivity extends Activity {
 	
 	private Button btn;
 	private String url="http://www.colorines.org/tracks.json";
+	private ArrayList<Client> clients;
+	private ArrayList<Invoice> invoices;
+	private ArrayList<Test> tests;
+	private ArrayList<Track> tracks;
+	private ArrayList<Vehicle> vehicles;
 
+
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		initModel();
 		initControls();
 		initDB();
 	}
 	
+	private void initModel() {
+		clients = new ArrayList<Client>();
+		invoices = new ArrayList<Invoice>();
+		tests = new ArrayList<Test>();
+		tracks = new ArrayList<Track>();
+		vehicles = new ArrayList<Vehicle>();
+		
+	}
+
 	private void initControls(){
 	    btn = (Button)findViewById(R.id.btn);
 		btn.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +58,8 @@ public class AutopricingActivity extends Activity {
         if(db != null){
         	Webservice.getJSON(url);
             //Aquí deberemos insertar los datos de la BD
-        	Webservice.loadTracks(url);
+        	Webservice.loadTracks(url,tracks);
+    		Log.i("MAIN", "Tracks loaded:" + tracks.size() + "tracks readed" );
 
             //Cerramos la base de datos
             db.close();
