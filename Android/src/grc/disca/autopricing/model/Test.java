@@ -1,15 +1,17 @@
 package grc.disca.autopricing.model;
 
 public class Test {
+	private int id;
 	private Mobile mobile;
 	private Vehicle vehicle;
 	private Track track;
 	private int minutes;
 	private float price;
 	
-	public Test(Mobile mobile, Vehicle vehicle, Track track, int minutes,
+	public Test(int id, Mobile mobile, Vehicle vehicle, Track track, int minutes,
 			float price) {
 		super();
+		this.id = id;
 		this.mobile = mobile;
 		this.vehicle = vehicle;
 		this.track = track;
@@ -19,11 +21,20 @@ public class Test {
 	
 	public Test() {
 		super();
+		this.id = -1;
 		this.mobile = new Mobile();
 		this.vehicle = new Vehicle();
 		this.track = new Track();
 		this.minutes = 0;
 		this.price = 0;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Mobile getMobile() {
@@ -68,7 +79,7 @@ public class Test {
 
 	@Override
 	public String toString() {
-		return "Test [mobile=" + mobile + ", vehicle=" + vehicle + ", track="
+		return "Test [ide=" + id + ", mobile=" + mobile + ", vehicle=" + vehicle + ", track="
 				+ track + ", minutes=" + minutes + ", price=" + price + "]";
 	}
 	

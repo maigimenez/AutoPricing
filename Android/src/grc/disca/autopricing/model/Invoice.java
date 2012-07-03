@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Invoice {
+	private int id;
 	private Date date;
 	private Client client;
 	ArrayList<Test> tests;
 	float total;
 	
-	public Invoice(Date date, Client client, ArrayList<Test> tests, float total) {
+	public Invoice(int id, Date date, Client client, ArrayList<Test> tests, float total) {
 		super();
+		this.id = id;
 		this.date = date;
 		this.client = client;
 		this.tests = tests;
@@ -19,10 +21,19 @@ public class Invoice {
 	
 	public Invoice() {
 		super();
+		this.id = -1;
 		this.date = new Date();
 		this.client = new Client();
 		this.tests = new ArrayList<Test>();
 		this.total = 0;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Date getDate() {
@@ -59,7 +70,7 @@ public class Invoice {
 
 	@Override
 	public String toString() {
-		return "Invoice [date=" + date + ", client=" + client + ", tests="
+		return "Invoice [id=" + id + ", date=" + date + ", client=" + client + ", tests="
 				+ tests + ", total=" + total + "]";
 	}
 	

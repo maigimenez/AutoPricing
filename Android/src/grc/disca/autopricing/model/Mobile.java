@@ -1,19 +1,30 @@
 package grc.disca.autopricing.model;
 
 public class Mobile {
+	private int id;
 	private String name;
 	private String mac;
 	
-	public Mobile(String name, String mac) {
+	public Mobile(int id, String name, String mac) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.mac = mac;
 	}
 	
 	public Mobile() {
 		super();
+		this.id = -1;
 		this.name = "";
 		this.mac = "";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -34,7 +45,7 @@ public class Mobile {
 
 	@Override
 	public String toString() {
-		return "Mobile [name=" + name + ", mac=" + mac + "]";
+		return "Mobile [id=" + id + ", name=" + name + ", mac=" + mac + "]";
 	}
 	
 	

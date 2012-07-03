@@ -1,22 +1,33 @@
 package grc.disca.autopricing.model;
 
 public class Track {
+	private int id;
 	private String name;
 	private float price;
-	//private  
+	//private WKT area  
 	
-	public Track(String name, float price) {
+	public Track(int id, String name, float price) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.price = price;
 	}
 	
 	public Track() {
 		super();
+		this.id = -1;
 		this.name = "";
 		this.price = 0;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -33,7 +44,7 @@ public class Track {
 	
 	@Override
 	public String toString() {
-		return "Track [name=" + name + ", price=" + price + "]";
+		return "Track [ id=" +id + ", name=" + name + ", price=" + price + "]";
 	}
 	
 }
